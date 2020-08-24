@@ -1,0 +1,37 @@
+{% set name = "jwcrypto" %}
+{% set version = "0.6.0" %}
+{% set sha256 = "a87ac0922d09d9a65011f76d99849f1fbad3d95439c7452cebf4ab0871c2b665" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+    - cryptography >=1.5
+
+test:
+  imports:
+    - jwcrypto
+
+about:
+  home: https://jwcrypto.readthedocs.io/en/latest/
+  license: LGPL v3.0
+  license_family: LGPL
+  license_file: LICENSE
+  summary: Implements JWK,JWS,JWE specifications using python-cryptography
+  doc_url: https://jwcrypto.readthedocs.io/en/latest/
+  dev_url: https://github.com/latchset/jwcrypto
