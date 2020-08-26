@@ -1,6 +1,6 @@
 {% set name = "jwcrypto" %}
-{% set version = "0.6.0" %}
-{% set sha256 = "a87ac0922d09d9a65011f76d99849f1fbad3d95439c7452cebf4ab0871c2b665" %}
+{% set version = "0.8" %}
+{% set sha256 = "b7fee2635bbefdf145399392f5be26ad54161c8271c66b5fe107b4b452f06c24" %}
 
 package:
   name: {{ name|lower }}
